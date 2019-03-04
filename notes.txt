@@ -1,0 +1,24 @@
+
+
+The URL to  'currency-exchange-service' is : http://localhost:8000/currency-exchange/from/EUR/to/INR
+
+The URL to 'currency-exchange-service' via Zuul API Gateway is : http://localhost:8765/{application-name}/{uri}
+  -> http://localhost:8765/currency-exchange-service/currency-exchange/from/EUR/to/INR
+
+  
+# Route call from 'currency-conversion-service' to 'currency-exchange-service' via feign client through Zuul API gateway
+http://localhost:8100/currency-converter-feign/from/USD/to/INR/quantity/10
+  
+  
+# Route call to feign client URI in 'currency-conversion-service' through Zuul API gateway
+http://localhost:8765/{application-name}/{uri} ->
+http://localhost:8765/currency-conversion-service/currency-converter-feign/from/USD/to/INR/quantity/10
+   
+   
+# Route call from 'currency-conversion-service' to 'currency-exchange-service' via rest client through Zuul API gateway
+http://localhost:8100/currency-converter/from/USD/to/INR/quantity/10
+  
+  
+# Route call to rest client URI in 'currency-conversion-service' through Zuul API gateway
+http://localhost:8765/{application-name}/{uri} ->
+http://localhost:8765/currency-conversion-service/currency-converter/from/USD/to/INR/quantity/10
