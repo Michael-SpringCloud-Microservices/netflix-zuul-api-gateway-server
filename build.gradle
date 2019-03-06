@@ -22,9 +22,20 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-zuul'
+	
 	// The following dependency is for generating a unique id for each request
-	// to trace it among multiple components of micro service in log
+	// to trace it among multiple micro services's log
 	implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+	
+	// For logging log messages with the specific format which could be understood by zipkin  
+	implementation 'org.springframework.cloud:spring-cloud-starter-zipkin'
+	
+	// For connecting micro services to Rabbit MQ message broker and publish logs messages to default Exchange
+	// Which will be delivered to Queue Zipkin
+	// This is an implementation of Spring Clould Bus
+	implementation 'org.springframework.amqp:spring-rabbit'
+	
+		
 	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
