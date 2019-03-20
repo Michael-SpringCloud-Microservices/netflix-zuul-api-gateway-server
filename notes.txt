@@ -1,24 +1,31 @@
 
+scenario 1 - The URL to  'currency-exchange-service' is : http://localhost:8000/currency-exchange/from/EUR/to/INR
 
-The URL to  'currency-exchange-service' is : http://localhost:8000/currency-exchange/from/EUR/to/INR
+scenario 2 - The URL to call 'currency-exchange-service' via Zuul API Gateway is : http://localhost:8765/{application-name}/{uri}
+-> http://localhost:8765/currency-exchange-service/currency-exchange/from/EUR/to/INR
 
-The URL to 'currency-exchange-service' via Zuul API Gateway is : http://localhost:8765/{application-name}/{uri}
-  -> http://localhost:8765/currency-exchange-service/currency-exchange/from/EUR/to/INR
-
-  
-# Route call from 'currency-conversion-service' to 'currency-exchange-service' via feign client through Zuul API gateway
-http://localhost:8100/currency-converter-feign/from/USD/to/INR/quantity/10
-  
-  
-# Route call to feign client URI in 'currency-conversion-service' through Zuul API gateway
-http://localhost:8765/{application-name}/{uri} ->
-http://localhost:8765/currency-conversion-service/currency-converter-feign/from/USD/to/INR/quantity/10
    
-   
-# Route call from 'currency-conversion-service' to 'currency-exchange-service' via rest client through Zuul API gateway
+scenario 3 - Route call from 'currency-conversion-service' to 'currency-exchange-service' via rest client 
 http://localhost:8100/currency-converter/from/USD/to/INR/quantity/10
-  
-  
-# Route call to rest client URI in 'currency-conversion-service' through Zuul API gateway
-http://localhost:8765/{application-name}/{uri} ->
-http://localhost:8765/currency-conversion-service/currency-converter/from/USD/to/INR/quantity/10
+
+scenario 4 - Route call from 'currency-conversion-service' to 'currency-exchange-service' via rest client through Zuul API gateway
+http://localhost:8100/currency-converter-zuul/from/USD/to/INR/quantity/10
+
+
+scenario 5 - Route call from 'currency-conversion-service' to 'currency-exchange-service' via feign client 
+http://localhost:8100/currency-converter-feign/from/USD/to/INR/quantity/10
+
+scenario 6 - Route call from 'currency-conversion-service' to 'currency-exchange-service' via feign client through Zuul API gateway
+http://localhost:8100/currency-converter-feign-zuul/from/USD/to/INR/quantity/10
+
+Note:
+The URL to call 'currency-conversion-service' via Zuul API Gateway and then route to 'currency-exchange-service' -> Prefix 'http://localhost:8765/{application-name}/{uri}'
+ -> 'http://localhost:8765/currency-conversion-service' has to be prefixed with the above mentioned scenarios 3,4,5, and 6  
+
+scenario 3 - http://localhost:8765/currency-conversion-service/currency-converter/from/USD/to/INR/quantity/10
+
+scenario 4 - http://localhost:8765/currency-conversion-service/currency-converter-zuul/from/USD/to/INR/quantity/10
+
+scenario 5 - http://localhost:8765/currency-conversion-service/currency-converter-feign/from/USD/to/INR/quantity/10
+
+scenario 6 - http://localhost:8765/currency-conversion-service/currency-converter-feign-zuul/from/USD/to/INR/quantity/10
