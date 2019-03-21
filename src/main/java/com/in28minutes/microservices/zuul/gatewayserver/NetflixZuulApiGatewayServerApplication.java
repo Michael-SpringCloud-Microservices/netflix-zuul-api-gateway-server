@@ -1,4 +1,4 @@
-package com.in28minutes.microservices.zuul.netflixzuulapigatewayserver;
+package com.in28minutes.microservices.zuul.gatewayserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

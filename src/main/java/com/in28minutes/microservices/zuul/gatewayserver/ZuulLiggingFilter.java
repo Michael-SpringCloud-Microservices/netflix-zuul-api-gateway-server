@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.in28minutes.microservices.zuul.netflixzuulapigatewayserver;
+package com.in28minutes.microservices.zuul.gatewayserver;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,6 +21,7 @@ import com.netflix.zuul.exception.ZuulException;
 public class ZuulLiggingFilter extends ZuulFilter{
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	@Override
 	/**
 	 * setting the flag whether the filer has to work on request(s) or not

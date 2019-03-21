@@ -1,4 +1,4 @@
-package com.in28minutes.microservices.zuul.netflixzuulapigatewayserver;
+package com.in28minutes.microservices.zuul.gatewayserver;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
