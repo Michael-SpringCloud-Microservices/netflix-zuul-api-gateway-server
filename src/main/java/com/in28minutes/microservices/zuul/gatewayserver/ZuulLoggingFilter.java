@@ -18,7 +18,7 @@ import com.netflix.zuul.exception.ZuulException;
  *
  */
 @Component
-public class ZuulLiggingFilter extends ZuulFilter{
+public class ZuulLoggingFilter extends ZuulFilter{
 
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
