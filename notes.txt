@@ -20,7 +20,7 @@ http://localhost:8100/currency-converter-feign-zuul/from/USD/to/INR/quantity/10
 
 Note:
 The URL to call 'currency-conversion-service' via Zuul API Gateway and then route to 'currency-exchange-service' -> Prefix 'http://localhost:8765/{application-name}/{uri}'
- -> 'http://localhost:8765/currency-conversion-service' has to be prefixed with the above mentioned scenarios 3,4,5, and 6  
+ -> 'http://localhost:8765/currency-conversion-service' has to be prefixed with the above mentioned scenarios 3,4,5, and 6 as follows,
 
 scenario 3 - http://localhost:8765/currency-conversion-service/currency-converter/from/USD/to/INR/quantity/10
 
